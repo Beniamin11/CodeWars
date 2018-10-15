@@ -98,50 +98,37 @@ bool validate_battlefield(vector< vector<int> > field) {
                      if(current_size == 4)
                      {
                          if(battleship)
-                         return false;
+                             return false;
                          else
-                         {
                              battleship = true;
-                             if(node_column > column)
-                                 column = node_column;
-                         }
                      }
 
                      if(current_size == 3)
                      {
                          if(cruiser >= 2)
-                         return false;
+                             return false;
                          else
-                         {
                              cruiser++;
-                             if(node_column > column)
-                                 column = node_column;
-                         }
                      }
 
                      if(current_size == 2)
                      {
                          if(destroyer >= 3)
-                         return false;
+                             return false;
                          else
-                         {
                              destroyer++;
-                             if(node_column > column)
-                                 column = node_column;
-                         }
                      }
 
                      if(current_size == 1)
                      {
                          if(submarine >= 4)
-                         return false;
+                             return false;
                          else
-                         {
                              submarine++;
-                             if(node_column > column)
-                                 column = node_column;
-                         }
                      }
+
+                     if(node_column > column)
+                         column = node_column;
 
 
                  }//end if closed nodes
